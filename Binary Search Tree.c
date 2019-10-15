@@ -280,30 +280,29 @@ return 0;
 }
 
 
-/*Non_Leafnodes (struct Node * p)
+Non_Leafnodes (struct Node * p)
 {
 
 if (p == NULL || ((p->lchild == NULL) && (p->rchild == NULL)))
 
     {
 
-printf ("0");
+return;
 
 }
 
   else
 
     {
-        int x=Non_Leafnodes (root->lchild);
-        int y=Non_Leafnodes (root->rchild);
-int c =
-	1 + x + y;
+        int x=Non_Leafnodes (p->lchild);
+        int y=Non_Leafnodes (p->rchild);
+int c = 1 + x + y;
 
-printf ("%d", c);
+return c;
 
 
 }
-}*/
+}
 
 void MirrorImage(struct Node *p)
 
@@ -480,7 +479,10 @@ int ln = Leafnodes (root);
 
 printf ("\n%d\n", ln);
 
-//Non_Leafnodes (root);
+int k=Non_Leafnodes (root);
+
+printf("\n Non_leaf Nodes : %d",k);	
+
 printf("CONVERTIING BST TO ITS MIRROR IMAGE\n");
 
 MirrorImage(root);
