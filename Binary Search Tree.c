@@ -11,7 +11,25 @@ int data;
 struct Node *rchild;
 
 } *root = NULL;
-
+//Recursive Insert
+struct Node *RInsert(struct Node *p,int key)
+{ struct Node *t=NULL;
+  
+  if(p==NULL)
+  {
+  t=(struct Node *)malloc(sizeof(struct Node));
+  t->data=key;
+  t->lchild=t->rchild=NULL;
+  return t; }
+  if(key < p->data)
+  p->lchild=RInsert(p->lchild,key);
+  else if(key > p->data)
+  p->rchild=RInsert(p->rchild,key);
+  
+  return p;
+  
+  
+}
 void
 Insert (int key)
 {
