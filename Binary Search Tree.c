@@ -199,7 +199,7 @@ return 0;
 }
 
 
-int
+/*int
 Height (struct Node *p)
 {
 
@@ -240,8 +240,15 @@ return rh + 1;
 
 }
 
+}*/
+int Height(struct Node *p)
+{
+ int x,y;
+ if(p==NULL)return 0;
+ x=Height(p->lchild);
+ y=Height(p->rchild);
+ return x>y?x+1:y+1;
 }
-
 
 int
 Leafnodes (struct Node *p)
