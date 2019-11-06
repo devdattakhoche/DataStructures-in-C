@@ -36,7 +36,7 @@ int search(int H[],int key)
     {
         i++;
     }
-    return index+i;
+    return index+i+1;
 
 }
 void main()
